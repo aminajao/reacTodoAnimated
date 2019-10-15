@@ -7,11 +7,15 @@ class TodoList extends Component {
         super(props);
         this.state = {
             todos: [
-                { task: 'Read some books', id: 1 },
-                { task: 'Eat some fruits', id: 2 },
-                { task: 'Clean the room', id: 3 }
+
             ]
         };
+    }
+
+    handleRemove = (id) => {
+        this.setState({
+            todos: this.state.todos.filter(todo => todo.id !== id)
+        })
     }
 
     createTodo = (newTodo) => {
@@ -28,7 +32,7 @@ class TodoList extends Component {
                 <h1>Todo List!</h1>
                 {
                     todos.map(todo => (
-                        <Todo todo={todo} key={todo.id} />
+                        <Todo removeTodo={() => { this.handleRemove(todo.id) }} id={todo.id} todo={todo} key={todo.id} />
                     ))
                 }
             </div>

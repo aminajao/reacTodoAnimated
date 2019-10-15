@@ -3,7 +3,7 @@ import './App.css';
 
 //components
 import TodoList from './TodoList';
-import AddNewTodo from './AddNewTodo';
+
 
 
 function App() {
