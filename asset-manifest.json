@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/reacTodoAnimated/static/css/main.355df82a.chunk.css",
+    "main.css": "/reacTodoAnimated/static/css/main.bbe18c49.chunk.css",
     "main.js": "/reacTodoAnimated/static/js/main.28964cdb.chunk.js",
     "main.js.map": "/reacTodoAnimated/static/js/main.28964cdb.chunk.js.map",
     "runtime-main.js": "/reacTodoAnimated/static/js/runtime-main.dfc36c05.js",
@@ -8,14 +8,14 @@
     "static/js/2.d3353c0e.chunk.js": "/reacTodoAnimated/static/js/2.d3353c0e.chunk.js",
     "static/js/2.d3353c0e.chunk.js.map": "/reacTodoAnimated/static/js/2.d3353c0e.chunk.js.map",
     "index.html": "/reacTodoAnimated/index.html",
-    "precache-manifest.b3fd5fc09cf8cd6d9ffa3b64988b9dee.js": "/reacTodoAnimated/precache-manifest.b3fd5fc09cf8cd6d9ffa3b64988b9dee.js",
+    "precache-manifest.d2aff2f781bcd4117b4e60519fe2b736.js": "/reacTodoAnimated/precache-manifest.d2aff2f781bcd4117b4e60519fe2b736.js",
     "service-worker.js": "/reacTodoAnimated/service-worker.js",
-    "static/css/main.355df82a.chunk.css.map": "/reacTodoAnimated/static/css/main.355df82a.chunk.css.map"
+    "static/css/main.bbe18c49.chunk.css.map": "/reacTodoAnimated/static/css/main.bbe18c49.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.dfc36c05.js",
     "static/js/2.d3353c0e.chunk.js",
-    "static/css/main.355df82a.chunk.css",
+    "static/css/main.bbe18c49.chunk.css",
     "static/js/main.28964cdb.chunk.js"
   ]
 }
