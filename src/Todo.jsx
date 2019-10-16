@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Todo.css';
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 class Todo extends Component {
     constructor(props) {
@@ -37,37 +38,37 @@ class Todo extends Component {
     render() {
         const { task } = this.props.todo
         return (
-            <React.Fragment>
+            <TransitionGroup className={this.props.completed ? "Todo completed" : "Todo"}>
                 {
-                    this.state.isEditing === false ? (
-                        < div >
-                            <button onClick={this.toggleForm}>Edit</button>
-                            <button onClick={this.handleRemove}>X</button>
-                            <li onClick={this.handleCompletion}
-                                className={this.props.completed ? 'completed' : ''}
-                            >{task}
-                            </li>
-                        </div >
-                    ) : (
-                            <div>
-                                <form onSubmit={this.handleUpdate}>
-                                    <input onChange={this.handleChange}
-                                        type="text"
-                                        id="task"
-                                        name='task'
-                                        value={this.state.task} />
-                                    <input type="submit" value="Save" onClick={this.handleUpdate} />
+                    this.state.isEditing ? (
+                        <CSSTransition key='editing' timeout={500} classNames='form'>
+                            <form className='Todo-edit-form' onSubmit={this.handleUpdate}>
+                                <input onChange={this.handleChange}
+                                    type="text"
+                                    id="task"
+                                    name='task'
+                                    value={this.state.task} />
+                                <input type="submit" value="Save" onClick={this.handleUpdate} />
 
-                                </form>
-                            </div>
+                            </form>
+                        </CSSTransition>
+                    ) : (
+                            <CSSTransition key='normal' timeout={500} classNames='task-text'>
+                                <li onClick={this.handleCompletion}
+                                    className={this.props.completed ? 'Todo-task completed' : 'Todo-task'}
+                                >{task}
+                                </li>
+                            </CSSTransition>
                         )
                 }
-            </React.Fragment>
-
+                <div className='Todo-buttons'>
+                    <button onClick={this.toggleForm}><i class='fas fa-pen' /></button>
+                    <button onClick={this.handleRemove}><i class='fas fa-trash'></i></button>
+                </div>
+            </TransitionGroup>
 
         )
+
     }
-
 }
-
 export default Todo;

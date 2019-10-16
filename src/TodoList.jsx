@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Todo from './Todo';
 import AddNewTodo from './AddNewTodo';
+import './TodoList.css'
 
 class TodoList extends Component {
     constructor(props) {
@@ -48,23 +49,27 @@ class TodoList extends Component {
     render() {
         const todos = this.state.todos
         return (
-            <div>
+            <div className='TodoList'>
+                <h1>Todo List!
+                    <span>A Simple React Todo List App.</span>
+                </h1>
                 <AddNewTodo createTodo={this.createTodo} />
 
-                <h1>Todo List!</h1>
-                {
-                    todos.map(todo => (
-                        <Todo
-                            removeTodo={() => { this.handleRemove(todo.id) }}
-                            id={todo.id}
-                            completed={todo.completed}
-                            todo={todo}
-                            key={todo.id}
-                            updateTodo={this.updateTodo}
-                            toggleTodo={() => { this.toggleCompletion(todo.id) }}
-                        />
-                    ))
-                }
+                <ul>
+                    {
+                        todos.map(todo => (
+                            <Todo
+                                removeTodo={() => { this.handleRemove(todo.id) }}
+                                id={todo.id}
+                                completed={todo.completed}
+                                todo={todo}
+                                key={todo.id}
+                                updateTodo={this.updateTodo}
+                                toggleTodo={() => { this.toggleCompletion(todo.id) }}
+                            />
+                        ))
+                    }
+                </ul>
             </div>
         )
     }

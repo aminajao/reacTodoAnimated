@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import uuid from 'uuid'
+import React, { Component } from 'react';
+import uuid from 'uuid';
+import './AddNewTodo.css'
 
 class AddNewTodo extends Component {
     constructor() {
@@ -17,25 +18,23 @@ class AddNewTodo extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.createTodo({ ...this.state, id: uuid(), completed:false });
+        this.props.createTodo({ ...this.state, id: uuid(), completed: false });
         this.setState({ task: '' });
     }
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="Enter Todo"></label>
-                    <input onChange={this.handleChange}
-                        type="text"
-                        name="task"
-                        value={this.state.task}
-                        id="task"
-                        placeholder='Enter New Todo' />
-                    <input type="submit" value="Submit" />
-                </form>
-
-            </div>
-        )
+            <form className='NewTodoForm' onSubmit={this.handleSubmit}>
+                <label htmlFor="Task">Enter Todo</label>
+                <input
+                    onChange={this.handleChange}
+                    type="text"
+                    name="task"
+                    value={this.state.task}
+                    id="task"
+                    placeholder='Enter New Todo' />
+                <button>Add Todo</button>
+            </form>
+        );
     }
 }
 

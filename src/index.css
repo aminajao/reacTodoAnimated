@@ -6,5 +6,9 @@
 }
 html, body {
   font-family: 'Quicksand', sans-serif;
+  font-size: 1.1rem;
+  background: linear-gradient(90deg, #69b7eb, #b3dbd3, #f4d6db);
+  height: 100%;
+  
 }
 
